@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capex Tours</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Capex Tours</h1>
+            <ul class="nav-links">
+                <li><a href="#landing">Home</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#booking">Book Your Tour</a></li>
+                <li><a href="#reviews">Client Reviews</a></li>
+                <li><a href="#bookings">Your Bookings</a></li> <!-- Booking link -->
+                <li><a href="#profile"><i class="fas fa-user"></i></a></li> <!-- User icon -->
+            </ul>
+        </div>
+    </nav
+
+    <!-- Landing Page -->
+    <section id="landing" class="landing">
+        <img src="cpt.jpeg" alt="Cape Town">
+        <h1>Welcome to Capex Tours</h1>
+        <p>Explore the beauty of Cape Town with us</p>
+        <button class="book-now">Book Your Adventure</button>
+    </section>
+    
+    <!-- Tour Listing -->
+    <section id="tours" class="tours">
+        <h2>Our Tours</h2>
+        <div class="tour-cards">
+            <div class="tour-card">
+                <img src="3d.jpg" alt="Wine Tram Tour">
+                <div class="tour-info">
+                    <h3>Tour 1: Wine Tram Tour</h3>
+                    <p>Enjoy a scenic journey through the vineyards of Cape Town with our Wine Tram Tour.</p>
+                    <span>R 1,500.00</span>
+                    <button class="book-now">Book Now</button>
+                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="tm.webp" alt="Table Mountain">
+                <div class="tour-info">
+                    <h3>Tour 2: Table Mountain</h3>
+                    <p>Experience the breathtaking views from the top of Table Mountain. </p>
+                    <span>R 1,000.00</span>
+                    <button class="book-now">Book Now</button>
+                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                </div>
+            </div>
+            <!-- Add 4 more tour cards here -->
+            <div class="tour-card">
+                <img src="RBT.jpg" alt="Red-bus City Tour">
+                <div class="tour-info">
+                    <h3>Tour 3: Red-bus City Tour</h3>
+                    <p>Discover the vibrant city of Cape Town aboard our Red-bus City Tour. </p>
+                    <span>R 800.00</span>
+                    <button class="book-now">Book Now</button>
+                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="Sfr.webp" alt="Safari Adventure">
+                <div class="tour-info">
+                    <h3>Tour 4: Safari Adventure</h3>
+                    <p>Embark on an unforgettable safari adventure and witness Africa's majestic wildlife.  </p>
+                    <span>R 2,000.00</span>
+                    <button class="book-now">Book Now</button>
+                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="image.png" alt="Beach Excursion">
+                <div class="tour-info">
+                    <h3>Tour 5: Beach Excursion</h3>
+                    <p>Relax and unwind on the pristine beaches of Cape Town with our Beach Excursion tour.  </p>
+                    <span>R 700.00</span>
+                    <button class="book-now">Book Now</button>
+                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="28.jpg" alt="Historic Tour">
+                <div class="tour-info">
+                    <h3>Tour 6: Historic Tour</h3>
+                    <p>Immerse yourself in the rich history and culture of Cape Town on our Historic Tour.  </p>
+                    <span>R 900.00</span>
+                    <button class="book-now">Book Now</button>
+                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Booking Form -->
+    <section id="booking" class="booking">
+        <h2>Book Your Tour</h2>
+        <form>
+            <label for="tour">Select Tour:</label>
+            <select id="tour" name="tour">
+                <option value="wine-tram">Wine Tram Tour</option>
+                <option value="table-mountain">Table Mountain</option>
+                <option value="red-bus-city">Red-bus City Tour</option>
+                <option value="safari-adventure">Safari Adventure</option>
+                <option value="beach-excursion">Beach Excursion</option>
+                <option value="historic-tour">Historic Tour</option>
+            </select>
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date">
+            <label for="participants">Number of Participants:</label>
+            <input type="number" id="participants" name="participants">
+            <button class="book-now">Book Now</button>
+        </form>
+    </section>
+    
+    <!-- Client Reviews -->
+    <!-- Client Reviews -->
+<section id="reviews" class="reviews">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-carousel">
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <i class="fas fa-user-circle"></i> <!-- Font Awesome icon for image -->
+            </div>
+            <div class="testimonial-info">
+                <h3>Emily Watson</h3>
+                <p>Capex Tours provided an unforgettable experience in Cape Town! From breathtaking views to delicious local cuisine, every moment was magical.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i> <!-- Font Awesome icon for star -->
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i> <!-- Half star for rating -->
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="testimonial-info">
+                <h3>Michael Johnson</h3>
+                <p>I had a fantastic time exploring Cape Town's hidden gems with Capex Tours. The guides were knowledgeable and made the experience truly enjoyable.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-image">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="testimonial-info">
+                <h3>Sophia Patel</h3>
+                <p>Capex Tours exceeded my expectations! The tours were well-organized, and the guides provided insightful commentary throughout the trip.</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Capex Tours. All Rights Reserved.</p>
+    </div>
+</footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

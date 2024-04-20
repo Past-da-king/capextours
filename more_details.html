@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Capex Tours</h1>
+            <ul class="nav-links">
+              <li><a href="index.html#landing">Home</a></li>
+              <li><a href="index.html#tours">Tours</a></li>
+              <li><a href="index.html#booking">Book Your Tour</a></li>
+              <li><a href="index.html#reviews">Client Reviews</a></li>
+              <li><a href="index.html#bookings">Your Bookings</a></li>
+              <li><a href="index.html#profile"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tour Details -->
+    <section id="tour-details" class="tour-details">
+        <div class="container">
+            <!-- Tour Images Carousel -->
+            <div class="tour-images">
+                <div class="carousel">
+                    <img src="tour-image1.jpg" alt="Tour Image 1">
+                    <img src="tour-image2.jpg" alt="Tour Image 2">
+                    <img src="tour-image3.jpg" alt="Tour Image 3">
+                    <!-- Add more images here -->
+                </div>
+            </div>
+            
+            <!-- Tour Description -->
+            <div class="tour-description">
+                <h2>Tour Name</h2>
+                <p>Description of the tour in English. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget velit nec libero fringilla hendrerit.</p>
+                
+                <!-- To-Do List -->
+                <h3>To-Do List</h3>
+                <ul>
+                    <li>Activity 1</li>
+                    <li>Activity 2</li>
+                    <li>Activity 3</li>
+                    <!-- Add more activities here -->
+                </ul>
+                
+                <!-- Booking Form -->
+                <h3>Book Your Tour</h3>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="date">Select Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <label for="participants">Number of Participants:</label>
+                    <input type="number" id="participants" name="participants" required>
+                    <button type="submit" class="book-now">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Capex Tours. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
