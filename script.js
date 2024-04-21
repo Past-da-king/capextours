@@ -1,5 +1,5 @@
 // JavaScript for scrolling to the booking section and selecting the correct booking option
-
+import { saveBooking, getAllBookings } from './indexedDB.js';
 // Select all "Book Now" buttons
 const bookNowButtons = document.querySelectorAll('.book-now');
 
@@ -54,3 +54,38 @@ showImage(currentImageIndex);
 // Add click event listeners to carousel navigation buttons
 document.querySelector('.prev').addEventListener('click', prevImage);
 document.querySelector
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const selectedTour = document.getElementById("tour").value;
+    const selectedDate = document.getElementById("date").value;
+    const numParticipants = document.getElementById("participants").value;
+
+    const booking = {
+        tour: selectedTour,
+        date: selectedDate,
+        participants: numParticipants
+    };
+
+    saveBooking(booking); // Save the booking details
+});
+
+// List bookings
+function listBookings() {
+    getAllBookings(function(bookings) {
+        const bookingsContainer = document.getElementById("bookings-list");
+
+        // Clear previous listings
+        bookingsContainer.innerHTML = "";
+
+        // Create a list item for each booking
+        bookings.forEach(function(booking) {
+            const bookingItem = document.createElement("li");
+            bookingItem.textContent = `Tour: ${booking.tour}, Date: ${booking.date}, Participants: ${booking.participants}`;
+            bookingsContainer.appendChild(bookingItem);
+        });
+    });
+}
+
+// Call listBookings to list existing bookings when the page loads
+window.addEventListener("load", listBookings);

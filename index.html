@@ -19,11 +19,11 @@
                 <li><a href="#tours">Tours</a></li>
                 <li><a href="#booking">Book Your Tour</a></li>
                 <li><a href="#reviews">Client Reviews</a></li>
-                <li><a href="#bookings">Your Bookings</a></li> <!-- Booking link -->
+                <li><button id="cartButton">Your Bookings</button></li><!-- Booking link -->
                 <li><a href="#profile"><i class="fas fa-user"></i></a></li> <!-- User icon -->
             </ul>
         </div>
-    </nav
+    </nav>
 
     <!-- Landing Page -->
     <section id="landing" class="landing">
@@ -105,24 +105,35 @@
     <!-- Booking Form -->
     <section id="booking" class="booking">
         <h2>Book Your Tour</h2>
-        <form>
+        <form id="bookingForm">
             <label for="tour">Select Tour:</label>
             <select id="tour" name="tour">
-                <option value="wine-tram">Wine Tram Tour</option>
-                <option value="table-mountain">Table Mountain</option>
-                <option value="red-bus-city">Red-bus City Tour</option>
-                <option value="safari-adventure">Safari Adventure</option>
-                <option value="beach-excursion">Beach Excursion</option>
-                <option value="historic-tour">Historic Tour</option>
+                <option value="wine-tram" data-price="1500">Wine Tram Tour</option>
+                <option value="table-mountain" data-price="1000">Table Mountain</option>
+                <option value="red-bus-city" data-price="800">Red-bus City Tour</option>
+                <option value="safari-adventure" data-price="2000">Safari Adventure</option>
+                <option value="beach-excursion" data-price="700">Beach Excursion</option>
+                <option value="historic-tour" data-price="900">Historic Tour</option>
             </select>
             <label for="date">Select Date:</label>
             <input type="date" id="date" name="date">
             <label for="participants">Number of Participants:</label>
             <input type="number" id="participants" name="participants">
-            <button class="book-now">Book Now</button>
+            <button type="submit" class="book-now">Book Now</button>
         </form>
     </section>
-    
+
+   
+
+    <section id="bookingSection" class="booking-section">
+
+        <h1 class="logo L2" >Your Bookings</h1>
+        <button id="cartButton2"><i class="fas fa-times"></i></button>
+        <div id="bookingList">
+            <!-- Booking cards will be dynamically generated here -->
+        </div> 
+       
+    </section>  
     <!-- Client Reviews -->
     <!-- Client Reviews -->
 <section id="reviews" class="reviews">
@@ -203,5 +214,6 @@
 </footer>
     
     <script src="script.js"></script>
+    <script src="some.js"></script>
 </body>
 </html>
