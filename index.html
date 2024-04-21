@@ -19,11 +19,16 @@
                 <li><a href="#tours">Tours</a></li>
                 <li><a href="#booking">Book Your Tour</a></li>
                 <li><a href="#reviews">Client Reviews</a></li>
-                <li><a href="#bookings">Your Bookings</a></li> <!-- Booking link -->
+                <li><button id="cartButton">Your Bookings</button></li><!-- Booking link -->
                 <li><a href="#profile"><i class="fas fa-user"></i></a></li> <!-- User icon -->
             </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </div>
-    </nav
+    </nav>
 
     <!-- Landing Page -->
     <section id="landing" class="landing">
@@ -44,7 +49,7 @@
                     <p>Enjoy a scenic journey through the vineyards of Cape Town with our Wine Tram Tour.</p>
                     <span>R 1,500.00</span>
                     <button class="book-now">Book Now</button>
-                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                     <button class="more-details"><a href="more_details.html?tour=1">More Details</a></button>
                 </div>
             </div>
             <div class="tour-card">
@@ -54,7 +59,7 @@
                     <p>Experience the breathtaking views from the top of Table Mountain. </p>
                     <span>R 1,000.00</span>
                     <button class="book-now">Book Now</button>
-                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                     <button class="more-details"><a href="more_details.html?tour=2">More Details</a></button>
                 </div>
             </div>
             <!-- Add 4 more tour cards here -->
@@ -65,7 +70,7 @@
                     <p>Discover the vibrant city of Cape Town aboard our Red-bus City Tour. </p>
                     <span>R 800.00</span>
                     <button class="book-now">Book Now</button>
-                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                     <button class="more-details"><a href="more_details.html?tour=3">More Details</a></button>
                 </div>
             </div>
             <div class="tour-card">
@@ -75,7 +80,7 @@
                     <p>Embark on an unforgettable safari adventure and witness Africa's majestic wildlife.  </p>
                     <span>R 2,000.00</span>
                     <button class="book-now">Book Now</button>
-                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                     <button class="more-details"><a href="more_details.html?tour=4">More Details</a></button>
                 </div>
             </div>
             <div class="tour-card">
@@ -85,7 +90,7 @@
                     <p>Relax and unwind on the pristine beaches of Cape Town with our Beach Excursion tour.  </p>
                     <span>R 700.00</span>
                     <button class="book-now">Book Now</button>
-                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                     <button class="more-details"><a href="more_details.html?tour=5">More Details</a></button>
                 </div>
             </div>
             <div class="tour-card">
@@ -95,7 +100,7 @@
                     <p>Immerse yourself in the rich history and culture of Cape Town on our Historic Tour.  </p>
                     <span>R 900.00</span>
                     <button class="book-now">Book Now</button>
-                     <button class="more-details"><a href="more_details.html">More Details</a></button>
+                     <button class="more-details"><a href="more_details.html?tour=5">More Details</a></button>
                 </div>
             </div>
         </div>
@@ -105,24 +110,35 @@
     <!-- Booking Form -->
     <section id="booking" class="booking">
         <h2>Book Your Tour</h2>
-        <form>
+        <form id="bookingForm">
             <label for="tour">Select Tour:</label>
             <select id="tour" name="tour">
-                <option value="wine-tram">Wine Tram Tour</option>
-                <option value="table-mountain">Table Mountain</option>
-                <option value="red-bus-city">Red-bus City Tour</option>
-                <option value="safari-adventure">Safari Adventure</option>
-                <option value="beach-excursion">Beach Excursion</option>
-                <option value="historic-tour">Historic Tour</option>
+                <option value="wine-tram" data-price="1500">Wine Tram Tour</option>
+                <option value="table-mountain" data-price="1000">Table Mountain</option>
+                <option value="red-bus-city" data-price="800">Red-bus City Tour</option>
+                <option value="safari-adventure" data-price="2000">Safari Adventure</option>
+                <option value="beach-excursion" data-price="700">Beach Excursion</option>
+                <option value="historic-tour" data-price="900">Historic Tour</option>
             </select>
             <label for="date">Select Date:</label>
             <input type="date" id="date" name="date">
             <label for="participants">Number of Participants:</label>
             <input type="number" id="participants" name="participants">
-            <button class="book-now">Book Now</button>
+            <button type="submit" class="book-now">Book Now</button>
         </form>
     </section>
-    
+
+   
+
+    <section id="bookingSection" class="booking-section">
+
+        <h1 class="logo L2" >Your Bookings</h1>
+        <button id="cartButton2"><i class="fas fa-times"></i></button>
+        <div id="bookingList">
+            <!-- Booking cards will be dynamically generated here -->
+        </div> 
+       
+    </section>  
     <!-- Client Reviews -->
     <!-- Client Reviews -->
 <section id="reviews" class="reviews">
@@ -203,5 +219,36 @@
 </footer>
     
     <script src="script.js"></script>
+    <script src="some.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open'); // Toggle the 'open' class
+        });
+
+        // Add event listener to each navigation link
+        const navLinksArray = document.querySelectorAll('.nav-links a');
+        navLinksArray.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open'); // Close the navigation menu
+            });
+        });
+    });
+        // Get the form element
+    
+// Add an event listener for form submission
+bookingForm.addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Clear the form inputs
+    bookingForm.reset();
+})
+    </script>
+
+
 </body>
 </html>

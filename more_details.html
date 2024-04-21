@@ -9,72 +9,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Capex Tours</h1>
-            <ul class="nav-links">
-              <li><a href="index.html#landing">Home</a></li>
-              <li><a href="index.html#tours">Tours</a></li>
-              <li><a href="index.html#booking">Book Your Tour</a></li>
-              <li><a href="index.html#reviews">Client Reviews</a></li>
-              <li><a href="index.html#bookings">Your Bookings</a></li>
-              <li><a href="index.html#profile"><i class="fas fa-user"></i></a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Tour Details -->
-    <section id="tour-details" class="tour-details">
-        <div class="container">
-            <!-- Tour Images Carousel -->
-            <div class="tour-images">
-                <div class="carousel">
-                    <img src="tour-image1.jpg" alt="Tour Image 1">
-                    <img src="tour-image2.jpg" alt="Tour Image 2">
-                    <img src="tour-image3.jpg" alt="Tour Image 3">
-                    <!-- Add more images here -->
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Capex Tours</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html#landing">Home</a></li>
+                    <li><a href="index.html#tours">Tours</a></li>
+                    <li><a href="index.html#booking">Book Your Tour</a></li>
+                    <li><a href="index.html#reviews">Client Reviews</a></li>
+                    <li><button id="cartButton">Your Bookings</button></li><!-- Booking link -->
+                    <li><a href="#profile"><i class="fas fa-user"></i></a></li> <!-- User icon -->
+                </ul>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
                 </div>
             </div>
-            
-            <!-- Tour Description -->
-            <div class="tour-description">
-                <h2>Tour Name</h2>
-                <p>Description of the tour in English. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget velit nec libero fringilla hendrerit.</p>
-                
-                <!-- To-Do List -->
-                <h3>To-Do List</h3>
-                <ul>
-                    <li>Activity 1</li>
-                    <li>Activity 2</li>
-                    <li>Activity 3</li>
-                    <!-- Add more activities here -->
-                </ul>
-                
-                <!-- Booking Form -->
-                <h3>Book Your Tour</h3>
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="date">Select Date:</label>
-                    <input type="date" id="date" name="date" required>
-                    <label for="participants">Number of Participants:</label>
-                    <input type="number" id="participants" name="participants" required>
-                    <button type="submit" class="book-now">Book Now</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Capex Tours. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </nav>
     
+
+    <!-- Tour Details -->
+    <section class="tour-details"">
+        <h2 id="tourName"></h2>
+        <div class="container1 tour-card">
+            <h2 id="tourName"></h2>
+            <img id="tourImage" src="" alt="Tour Image">
+            <p  class="paragraph" id="tourDescription"></p>
+            <button onclick="showMore()" class="book-now " Nid="showBtn">Show More</button>
+            <h3>Activities</h3>
+            <ul id="activityList"></ul>
+            <p id="tourPrice"> </p>
+            <a  class="book-now "  style="margin:10px 0; text-decoration: none;" href="index.html#booking">Book Your Tour</a>
+        </div>
+        
+    </section>
+    
+    <script src="details_script.js"></script>
+    <script src="some.js"></script>
     <script src="script.js"></script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open'); // Toggle the 'open' class
+        });
+
+        // Add event listener to each navigation link
+        const navLinksArray = document.querySelectorAll('.nav-links a');
+        navLinksArray.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open'); // Close the navigation menu
+            });
+        });
+    });
+    </script>
 </body>
 </html>

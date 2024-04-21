@@ -1,7 +1,8 @@
 // JavaScript for scrolling to the booking section and selecting the correct booking option
-
+import { saveBooking, getAllBookings } from './indexedDB.js';
 // Select all "Book Now" buttons
 const bookNowButtons = document.querySelectorAll('.book-now');
+
 
 // Add click event listener to each "Book Now" button
 bookNowButtons.forEach(button => {
@@ -54,3 +55,47 @@ showImage(currentImageIndex);
 // Add click event listeners to carousel navigation buttons
 document.querySelector('.prev').addEventListener('click', prevImage);
 document.querySelector
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const selectedTour = document.getElementById("tour").value;
+    const selectedDate = document.getElementById("date").value;
+    const numParticipants = document.getElementById("participants").value;
+
+    const booking = {
+        tour: selectedTour,
+        date: selectedDate,
+        participants: numParticipants
+    };
+
+    saveBooking(booking); // Save the booking details
+});
+
+// List bookings
+function listBookings() {
+    getAllBookings(function(bookings) {
+        const bookingsContainer = document.getElementById("bookings-list");
+
+        // Clear previous listings
+        bookingsContainer.innerHTML = "";
+
+        // Create a list item for each booking
+        bookings.forEach(function(booking) {
+            const bookingItem = document.createElement("li");
+            bookingItem.textContent = `Tour: ${booking.tour}, Date: ${booking.date}, Participants: ${booking.participants}`;
+            bookingsContainer.appendChild(bookingItem);
+        });
+    });
+}
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('open'); // Toggle the 'open' class
+    });
+});
+
