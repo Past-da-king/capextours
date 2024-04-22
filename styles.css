@@ -794,7 +794,7 @@ body {
         align-items: center;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1050px) {
         .nav-links {
             display: none; /* Hide the nav links by default on small screens */
             flex-direction: column;
@@ -948,6 +948,7 @@ padding-left: 10px;
     text-decoration: none;
 
 }
+
 .book-now a{
     color: #fff;
     text-decoration: none;
