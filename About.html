@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sss.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Capex Tours</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html#landing">Home</a></li>
+                    <li><a href="index.html#tours">Tours</a></li>
+                    <li><a href="index.html#booking">Book Your Tour</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><button id="cartButton">Your Bookings</button></li><!-- Booking link -->
+                    <li><a href="#profile"><i class="fas fa-user"></i></a></li> <!-- User icon -->
+                </ul>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+        <section class="about">
+            <div class="container5">
+                <h2>About Us</h2>
+                <p>Welcome to <strong>Capex Tours</strong>! At <strong>Capex Tours</strong>, we are passionate about providing unforgettable travel experiences that leave a lasting impression. Our mission is to create tailor-made tours and adventures that cater to your interests, ensuring every moment of your journey is filled with excitement and wonder.</p>
+                <h3>Our Story</h3>
+                <p>Founded in <strong>2002</strong>, <strong>Capex Tours</strong> began with a simple idea: to offer travelers a unique and personalized way to explore the world. What started as a small venture has now grown into a renowned travel agency, known for its commitment to excellence and customer satisfaction.</p>
+                <h3>Our Philosophy</h3>
+                <p>At <strong>Capex Tours</strong>, we believe that travel is more than just visiting new places; it's about immersing yourself in new cultures, forging connections with locals, and creating memories that last a lifetime. That's why we go above and beyond to curate experiences that go beyond the ordinary, offering a blend of adventure, relaxation, and cultural immersion.</p>
+                <h3>What Sets Us Apart</h3>
+                <ul>
+                    <li><strong>Personalized Service:</strong> We understand that every traveler is unique, which is why we take the time to tailor each itinerary to your preferences and interests.</li>
+                    <li><strong>Expert Guidance:</strong> Our team of experienced travel experts are here to guide you every step of the way, from planning your trip to providing support during your journey.</li>
+                    <li><strong>Quality Accommodations:</strong> We partner with top-rated hotels, resorts, and lodges to ensure your comfort and satisfaction throughout your stay.</li>
+                    <li><strong>Sustainable Tourism:</strong> We are committed to responsible travel practices, supporting local communities, and minimizing our environmental impact.</li>
+                </ul>
+                <h3>Our Team</h3>
+                <p>Behind every great travel experience is a dedicated team of professionals who are passionate about what they do. Meet the faces behind <strong>Capex Tours</strong>:</p>
+                <ul>
+                    <li><strong>Ayanda Phaketsi:</strong> Founder and CEO</li>
+                    <li><strong>Thabo Shoba:</strong> Our team of experienced travel experts</li>
+                    <li><strong>Okuhle Ndlovu:</strong> Our friendly customer support team</li>
+                </ul>
+                <h3>Get In Touch</h3>
+                <p>Ready to embark on your next adventure? Contact us today to start planning your dream trip!</p>
+                <ul>
+                    <li><strong>Phone:</strong> 0734588557</li>
+                    <li><strong>Email:</strong> <a href="mailto:Capextour@capetour.za">Capextour@capetour.za</a></li>
+                    <li><strong>Address:</strong> 1 Dreyer St, Claremont, Cape Town, 7708</li>
+                </ul>
+                <p>Follow us on social media for travel inspiration, tips, and updates:</p>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://twitter.com">Twitter</a></li>
+                </ul>
+            </div>
+        </section>>
+    
+
+    <!-- Tour Details -->
+    <script src="details_script.js"></script>
+    <script src="some.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open'); // Toggle the 'open' class
+        });
+
+        // Add event listener to each navigation link
+        const navLinksArray = document.querySelectorAll('.nav-links a');
+        navLinksArray.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open'); // Close the navigation menu
+            });
+        });
+    });
+    </script>
+</body>
+</html>
